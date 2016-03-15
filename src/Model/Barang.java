@@ -2,7 +2,7 @@ package Model;
 
 public class Barang {
     //atribut
-    private long id;
+    private String id;
     private int jumlah_stok;
     private String nama_barang;
     
@@ -11,18 +11,18 @@ public class Barang {
         
     }
     
-    public Barang(long id, int jumlah_stok, String nama_barang){
+    public Barang(String id, int jumlah_stok, String nama_barang){
         this.id = id;
         this.jumlah_stok = jumlah_stok;
         this.nama_barang = nama_barang;
     }
     
     //method
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

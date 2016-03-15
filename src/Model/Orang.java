@@ -3,14 +3,14 @@ package Model;
 public abstract class Orang {
     //attribut
     protected String nama;
-    protected long id;
+    protected String id;
     
     //konstruktor
     public Orang(){
         
     }
     
-    public Orang(String nama, long id){
+    public Orang(String nama, String id){
         this.nama = nama;
         this.id = id;
     }
@@ -20,7 +20,7 @@ public abstract class Orang {
 
     public abstract void setNama(String nama);
 
-    public abstract long getId();
+    public abstract String getId();
 
-    public abstract void setId(long id);
+    public abstract void setId(String id);
 }
