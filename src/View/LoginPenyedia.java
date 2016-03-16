@@ -132,7 +132,7 @@ public class LoginPenyedia extends javax.swing.JFrame {
         menuAwal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
-
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

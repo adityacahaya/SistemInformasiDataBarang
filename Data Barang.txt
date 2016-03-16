@@ -7,3 +7,12 @@ Meja
 Lemari
 0003
 10
+Papan
+0004
+100
+Handphone
+0005
+200
+Komputer
+0006
+10
