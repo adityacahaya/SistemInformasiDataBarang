@@ -71,9 +71,9 @@ public class Gudang {
         this.index = index;
     }
     
-    public void addBarang(Barang brg, int jumlah){
+    public void addBarang(Barang brg){
         this.barangGudang[index] = brg;
-        this.setKapasitas_Sisa(this.kapasitas_sisa - jumlah);
+        this.setKapasitas_Sisa(this.kapasitas_sisa - brg.getJumlah_stok());
         index++;
     }
 }

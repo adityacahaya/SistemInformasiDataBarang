@@ -89,17 +89,18 @@ public class Penyedia extends Orang{
         } catch (IOException ex) {
             System.out.println(ex);
         }
+        
+        //kodingan ini
         Barang brg = new Barang(id_barang,jumlah,nama_barang);
         this.daftarBarang[index] = brg;
+        index++;
+        //sama kayak ini
+        this.daftarBarang[index] = new Barang(id_barang,jumlah,nama_barang);
         index++;
     }
 
     public Barang[] getDaftarBarang() {
         return daftarBarang;
-    }
-    
-    public void setDaftarBarang(int kapasitas){
-        daftarBarang = new Barang[kapasitas];
     }
     
     public int getIndex(){

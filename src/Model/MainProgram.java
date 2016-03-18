@@ -8,6 +8,51 @@ import javax.swing.JOptionPane;
 
 public class MainProgram {
     
+    public static void menuUtama() {
+        
+        Scanner s = new Scanner(System.in);
+        int pilihan = 0;
+        String nama;
+        String id;
+        
+        System.out.println("   Sistem Informasi Data Barang   ");
+        System.out.println("==================================");
+        System.out.println("Masukkan Pilihan Menu : ");
+        System.out.println("1. Penyedia");
+        System.out.println("2. Petugas");
+        System.out.print("Masukkan Pilihan : ");
+        pilihan = s.nextInt();
+        System.out.println("");
+        switch(pilihan){
+            case 1 :{
+                System.out.println("Masukkan Identitas Penyedia : ");
+                System.out.print("Nama : ");
+                nama = s.next();
+                System.out.print("Id   : ");
+                id = s.next();
+                
+                Penyedia penyedia = new Penyedia(id, nama);
+                
+                System.out.println("");
+                menuPenyedia(penyedia);
+                break;
+            }
+            case 2 :{
+                System.out.println("Masukkan Identitas Petugas : ");
+                System.out.print("Nama : ");
+                nama = s.next();
+                System.out.print("Id   : ");
+                id = s.next();
+                
+                Petugas p = new Petugas(id, nama);
+                
+                System.out.println("");
+                menuPetugas(p);
+                break;
+            }
+        }
+    }
+    
     public static void menuPenyedia(Penyedia p){
         
         Scanner s = new Scanner(System.in);
@@ -170,6 +215,31 @@ public class MainProgram {
     
     public static void tambahBarangGudang(Petugas p) {
         
+        Scanner s = new Scanner(System.in);
+        Penyedia pp = new Penyedia();
+        String namaBarang;
+        String idBarang;
+        int jumlahStok;
+        
+        System.out.println("=======Tambah Barang Gudang======");
+        System.out.println("Nama Petugas : "+p.getNama());
+        System.out.println("Id           : "+p.getId());
+        System.out.println("=================================");
+        System.out.println("Masukkan Data Barang : ");
+        System.out.print("Nama Barang : ");
+        namaBarang = s.next();
+        System.out.print("Jumlah Stok : ");
+        jumlahStok = s.nextInt();
+        
+        for(int i = 0; i < pp.getIndex(); i++){
+            if(pp.getDaftarBarang()[i].getNama_barang().equals(namaBarang)){
+                System.out.println("Error ! Barang Sudah Pernah di Masukkan");
+                System.out.println("");
+                menuPetugas(p);
+                break;
+            }
+        }
+        
     }
     
     public static void lihatBarangGudang(Petugas p) {
@@ -185,47 +255,6 @@ public class MainProgram {
     }
     
     public static void main(String[] args) {
-        
-        Scanner s = new Scanner(System.in);
-        int pilihan = 0;
-        String nama;
-        String id;
-        
-        System.out.println("   Sistem Informasi Data Barang   ");
-        System.out.println("==================================");
-        System.out.println("Masukkan Pilihan Menu : ");
-        System.out.println("1. Penyedia");
-        System.out.println("2. Petugas");
-        System.out.print("Masukkan Pilihan : ");
-        pilihan = s.nextInt();
-        System.out.println("");
-        switch(pilihan){
-            case 1 :{
-                System.out.println("Masukkan Identitas Penyedia : ");
-                System.out.print("Nama : ");
-                nama = s.next();
-                System.out.print("Id   : ");
-                id = s.next();
-                
-                Penyedia penyedia = new Penyedia(id, nama);
-                
-                System.out.println("");
-                menuPenyedia(penyedia);
-                break;
-            }
-            case 2 :{
-                System.out.println("Masukkan Identitas Petugas : ");
-                System.out.print("Nama : ");
-                nama = s.next();
-                System.out.print("Id   : ");
-                id = s.next();
-                
-                Petugas p = new Petugas(id, nama);
-                
-                System.out.println("");
-                menuPetugas(p);
-                break;
-            }
-        }
+        menuUtama();
     }
 }

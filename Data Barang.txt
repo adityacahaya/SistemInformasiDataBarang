@@ -16,3 +16,6 @@ Handphone
 Komputer
 0006
 10
+Tas
+0008
+10

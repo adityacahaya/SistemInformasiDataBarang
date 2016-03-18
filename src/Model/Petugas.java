@@ -73,7 +73,8 @@ public class Petugas extends Orang{
                     + "melebihi kapasitas", "Error !", 0);
         }
         else{
-            g.addBarang(b, jumlah);
+            b.setJumlah_stok(jumlah);
+            g.addBarang(b);
             try {
                 if(log.exists() == false){
                     log.createNewFile();
@@ -259,7 +260,7 @@ public class Petugas extends Orang{
                         jumlah_barang = Integer.parseInt(x);
                         i++;
                         Barang brg = new Barang(id_barang,jumlah_barang,nama_barang);
-                        g.addBarang(brg, jumlah_barang);
+                        g.addBarang(brg);
                         i = 0;
                     }
                 }
